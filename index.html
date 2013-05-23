@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Jqueryvalidation by JohnathanMarkSmith</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Jqueryvalidation</h1>
+          <h2>This is a example project with JQuery showing how to do some form validation.</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/JohnathanMarkSmith/JQueryValidation/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/JohnathanMarkSmith/JQueryValidation/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/JohnathanMarkSmith/JQueryValidation" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h3>JQueryValidation</h3>
+
+<p>This is just a one JSP page example that demos some JQuery Validation stuff.  Yes I really did not have to use a JSP and tomcat7 but again this is only a one page example so why not... :)</p>
+
+<p>in my example I have some HTML code that looks like the following:</p>
+
+<pre><code>    &lt;div&gt;
+        &lt;form id="myForm"&gt;
+            &lt;p&gt;
+                &lt;label for="firstName"&gt;First Name:&lt;/label&gt;
+                &lt;input id="firstName" name="firstName"&gt;&lt;/input&gt;
+            &lt;/p&gt;
+            &lt;p&gt;
+                &lt;label for="lastName"&gt;Last Name:&lt;/label&gt;
+                &lt;input id="lastName" name="lastName"&gt;&lt;/input&gt;
+            &lt;/p&gt;
+            &lt;p&gt;
+                &lt;label for="age"&gt;Age:&lt;/label&gt;
+                &lt;input id="age" name="age"&gt;&lt;/input&gt;
+            &lt;/p&gt;
+            &lt;p&gt;
+                &lt;input type="submit" value="Submit" /&gt;
+            &lt;/p&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+</code></pre>
+
+<p>I wanted to put some validation in to check that data was entered into the fields and why not use JQuery for it..</p>
+
+<p>I then made the following style sheet code:</p>
+
+<pre><code>        &lt;style type="text/css"&gt;
+                #errorContainer {
+                    display: none;
+                    overflow: auto;
+                    background-color: #FFDDDD;
+                    border: 1px solid #FF2323;
+                    padding-top: 1;
+                }
+
+                #errorContainer label {
+                    float: none;
+                    width: auto;
+                }
+
+                input.error {
+                    border: 1px solid #FF2323;
+                }
+
+         &lt;/style&gt;
+</code></pre>
+
+<p>This is going to setup how the errors will look.  I then had to add a place on my page for the errors so I added the following div:</p>
+
+<pre><code>    &lt;div id="errorContainer"&gt;
+        &lt;p&gt;&amp;nbsp;Please correct the following errors and try again:&lt;/p&gt;
+        &lt;ul /&gt;
+    &lt;/div&gt;
+</code></pre>
+
+<p>The above code is where JQuery will be displaying the errors.</p>
+
+<h3>Now its time for the HARD work :)</h3>
+
+<p>You need to add the JQuery and the Validate libs into your code by added the following lines:</p>
+
+<pre><code>    &lt;script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<p>Now lets add the JQuery/JavaScript code that will check the fields on the page.  As you can see from the code below I give JQuery the rules which is (field names, ranges) and the error messages to display.</p>
+
+<pre><code>    &lt;script type="text/javascript"&gt;
+        $(function(){
+
+            $('#myForm').validate({
+                rules: {
+                    firstName: "required",
+                    lastName: "required",
+                    age: {
+                        required: true,
+                        range: [18,70]
+                    }
+                },
+                messages: {
+                    firstName: "Please enter your first name.",
+                    lastName: "Please enter your last name.",
+                    age: {
+                        required: "Please enter your age.",
+                        range: "Your age must be between 18 and 70."
+                    }
+                },
+                errorContainer: $('#errorContainer'),
+                errorLabelContainer: $('#errorContainer ul'),
+                wrapper: 'li'
+            });
+
+        });
+    &lt;/script&gt;
+</code></pre>
+
+<p>THAT'S IT!!!! IT WAS SO EAST TO USE JQUERY VALIDATION ON A FORM IN A WEB PAGE!!!</p>
+
+<p>You can see how easy it is to use JQuery Validation...</p>
+
+<h3>How To Get The Project and Run It</h3>
+
+<p>checkout the project from github.</p>
+
+<pre><code>git clone git@github.com:JohnathanMarkSmith/JQueryValidation.git
+cd JQueryValidation
+mvn tomcat7:run
+</code></pre>
+
+<p>Then open http://localhost:8080/JQueryValidation/ in your browser and play around.. Go have fun....</p>
+
+<p>You can download the source code to this at my github project (<a href="https://github.com/JohnathanMarkSmith/JQueryValidation">https://github.com/JohnathanMarkSmith/JQueryValidation</a>)</p>
+
+<p>If you have any questions please email me at <a href="mailto:john@johnathanmarksmith.com">john@johnathanmarksmith.com</a></p>
+        </section>
+
+        <footer>
+          Jqueryvalidation is maintained by <a href="https://github.com/JohnathanMarkSmith">JohnathanMarkSmith</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
