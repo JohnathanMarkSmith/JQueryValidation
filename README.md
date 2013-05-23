@@ -56,7 +56,41 @@ This is going to setup how the errors will look.  I then had to add a place on m
             <ul />
         </div>
 
-The above code is where JQuery will be displaying the errors
+### The above code is where JQuery will be displaying the errors. Now its time for the HARD work :)
+
+You need to add the JQuery and the Validate libs into your code by added the following lines:
+
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+
+
+        <script type="text/javascript">
+            $(function(){
+
+                $('#myForm').validate({
+                    rules: {
+                        firstName: "required",
+                        lastName: "required",
+                        age: {
+                            required: true,
+                            range: [18,70]
+                        }
+                    },
+                    messages: {
+                        firstName: "Please enter your first name.",
+                        lastName: "Please enter your last name.",
+                        age: {
+                            required: "Please enter your age.",
+                            range: "Your age must be between 18 and 70."
+                        }
+                    },
+                    errorContainer: $('#errorContainer'),
+                    errorLabelContainer: $('#errorContainer ul'),
+                    wrapper: 'li'
+                });
+
+            });
+        </script>
 
 You can see how easy it is to use JQuery Validation...
 
