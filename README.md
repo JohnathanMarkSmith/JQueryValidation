@@ -56,14 +56,16 @@ This is going to setup how the errors will look.  I then had to add a place on m
             <ul />
         </div>
 
-### The above code is where JQuery will be displaying the errors. Now its time for the HARD work :)
+The above code is where JQuery will be displaying the errors.
+
+### Now its time for the HARD work :)
 
 You need to add the JQuery and the Validate libs into your code by added the following lines:
 
         <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js"></script>
         <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
 
-Now lets add the JQuery/JavaScript call that will check the fields on the page.  As you can see from the code below I give JQuery the rules which is (field names, ranges) and the error messages to display.
+Now lets add the JQuery/JavaScript code that will check the fields on the page.  As you can see from the code below I give JQuery the rules which is (field names, ranges) and the error messages to display.
 
 
         <script type="text/javascript">
@@ -94,6 +96,10 @@ Now lets add the JQuery/JavaScript call that will check the fields on the page. 
             });
         </script>
 
+
+THAT'S IT!!!! IT WAS SO EAST TO USE JQUERY VALIDATION ON A FORM IN A WEB PAGE!!!
+
+
 You can see how easy it is to use JQuery Validation...
 
 
@@ -105,6 +111,9 @@ checkout the project from github.
     cd JQueryValidation
     mvn tomcat7:run
 
-Then open http://localhost:8080/JQueryValidation/ in your browser
+Then open http://localhost:8080/JQueryValidation/ in your browser and play around.. Go have fun....
+
+You can download the source code to this at my github project (https://github.com/JohnathanMarkSmith/JQueryValidation)
+
 
 If you have any questions please email me at john@johnathanmarksmith.com
