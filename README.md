@@ -27,25 +27,26 @@ in my example I have some HTML code that looks like the following:
 I wanted to put some validation in to check that data was entered into the fields and why not use JQuery for it..
 
 I then made the following style sheet code:
-        <style type="text/css">
-                #errorContainer {
-                    display: none;
-                    overflow: auto;
-                    background-color: #FFDDDD;
-                    border: 1px solid #FF2323;
-                    padding-top: 1;
-                }
 
-                #errorContainer label {
-                    float: none;
-                    width: auto;
-                }
+            <style type="text/css">
+                    #errorContainer {
+                        display: none;
+                        overflow: auto;
+                        background-color: #FFDDDD;
+                        border: 1px solid #FF2323;
+                        padding-top: 1;
+                    }
 
-                input.error {
-                    border: 1px solid #FF2323;
-                }
+                    #errorContainer label {
+                        float: none;
+                        width: auto;
+                    }
 
-         </style>
+                    input.error {
+                        border: 1px solid #FF2323;
+                    }
+
+             </style>
 
 
 This is going to setup how the errors will look.  I then had to add a place on my page for the errors so I added the following div:
