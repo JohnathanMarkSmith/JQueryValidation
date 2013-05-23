@@ -1,11 +1,61 @@
 ### JQueryValidation
 
-This is just a one JSP page example that demos some JQuery Validation stuff
+This is just a one JSP page example that demos some JQuery Validation stuff.  Yes I really did not have to use a JSP and tomcat7 but again this is only a one page example so why not... :)
+
+in my example I have some HTML code that looks like the following:
+
+        <div>
+            <form id="myForm">
+                <p>
+                    <label for="firstName">First Name:</label>
+                    <input id="firstName" name="firstName"></input>
+                </p>
+                <p>
+                    <label for="lastName">Last Name:</label>
+                    <input id="lastName" name="lastName"></input>
+                </p>
+                <p>
+                    <label for="age">Age:</label>
+                    <input id="age" name="age"></input>
+                </p>
+                <p>
+                    <input type="submit" value="Submit" />
+                </p>
+            </form>
+        </div>
+
+I wanted to put some validation in to check that data was entered into the fields and why not use JQuery for it..
+
+I then made the following style sheet code:
+        <style type="text/css">
+                #errorContainer {
+                    display: none;
+                    overflow: auto;
+                    background-color: #FFDDDD;
+                    border: 1px solid #FF2323;
+                    padding-top: 1;
+                }
+
+                #errorContainer label {
+                    float: none;
+                    width: auto;
+                }
+
+                input.error {
+                    border: 1px solid #FF2323;
+                }
+
+         </style>
 
 
-To run project
+This is going to setup how the errors will look.  I then had to add a place on my page for the errors so I added the following div:
 
-cd JQueryValidation.git
+        <div id="errorContainer">
+            <p>&nbsp;Please correct the following errors and try again:</p>
+            <ul />
+        </div>
+
+The above code is where JQuery will be displaying the errors
 
 You can see how easy it is to use JQuery Validation...
 
