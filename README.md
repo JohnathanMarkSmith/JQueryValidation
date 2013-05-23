@@ -15,9 +15,9 @@ You can see how easy it is to use JQuery Validation...
 checkout the project from github.
 
     git clone git@github.com:JohnathanMarkSmith/JQueryValidation.git
-    cd JQueryValidation.git
+    cd JQueryValidation
     mvn tomcat7:run
 
-Then open http://127.0.0.1:8080/index.jsp in your browser
+Then open http://localhost:8080/JQueryValidation/ in your browser
 
 If you have any questions please email me at john@johnathanmarksmith.com
