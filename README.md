@@ -63,6 +63,8 @@ You need to add the JQuery and the Validate libs into your code by added the fol
         <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js"></script>
         <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
 
+Now lets add the JQuery/JavaScript call that will check the fields on the page.  As you can see from the code below I give JQuery the rules which is (field names, ranges) and the error messages to display.
+
 
         <script type="text/javascript">
             $(function(){
