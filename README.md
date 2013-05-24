@@ -1,4 +1,4 @@
-### JQueryValidation
+### JQuery Validation Example
 
 This is just a one JSP page example that demos some JQuery Validation stuff.  Yes I really did not have to use a JSP and tomcat7 but again this is only a one page example so why not... :)
 
