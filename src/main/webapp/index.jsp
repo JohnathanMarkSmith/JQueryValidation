@@ -68,7 +68,7 @@
                 lastName: "Please enter your last name.",
                 age: {
                     required: "Please enter your age.",
-                    range: "Your age must be between 18 and 70."
+                    range: "Your age must be between 21 and 55."
                 }
             },
             errorContainer: $('#errorContainer'),
